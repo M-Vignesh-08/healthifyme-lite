@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HealthifyMe-Lite</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Gauge Plugin for Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-doughnutlabel@3.0.3/dist/chartjs-plugin-doughnutlabel.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🏃 HealthifyMe-Lite: Daily Health Tracker</h1>
+
+    <!-- Input Section -->
+    <div class="input-section">
+      <h2>Daily Inputs</h2>
+      <label>Steps Walked: <input type="number" id="steps" /></label>
+      <label>Water Intake (litres): <input type="number" id="water" /></label>
+      <label>Sleep (hours): <input type="number" id="sleep" /></label>
+      <h3>Set Your Goals</h3>
+      <label>Step Goal: <input type="number" id="stepGoal" value="10000" /></label>
+      <label>Water Goal (L): <input type="number" id="waterGoal" value="3" /></label>
+      <label>Sleep Goal (Hrs): <input type="number" id="sleepGoal" value="8" /></label>
+      <button onclick="updateProgress()">Save Progress</button>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-section">
+      <h2>📊 Your Progress</h2>
+      <canvas id="progressChart" width="300" height="300"></canvas>
+    </div>
+
+    <hr />
+
+    <!-- BMI Section -->
+    <div class="bmi-section">
+      <h2>⚖️ Check Your BMI</h2>
+      <label>Height (cm): <input type="number" id="height" /></label>
+      <label>Weight (kg): <input type="number" id="weight" /></label>
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <div class="bmi-gauge">
+        <canvas id="bmiChart" width="250" height="250"></canvas>
+        <div id="bmi-label" class="bmi-label"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
